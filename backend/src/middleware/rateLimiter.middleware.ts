@@ -16,7 +16,7 @@ export const globalRateLimiter = rateLimit({
   legacyHeaders: false,
   store: redisClient
     ? new RedisStore({
-        client: redisClient,
+        sendCommand: (...args: string[]) => redisClient.call(...args),
         prefix: 'rl:global:',
       })
     : undefined,
@@ -30,7 +30,7 @@ export const authRateLimiter = rateLimit({
   skipSuccessfulRequests: true,
   store: redisClient
     ? new RedisStore({
-        client: redisClient,
+        sendCommand: (...args: string[]) => redisClient.call(...args),
         prefix: 'rl:auth:',
       })
     : undefined,
@@ -43,7 +43,7 @@ export const apiRateLimiter = rateLimit({
   message: 'Rate limit exceeded',
   store: redisClient
     ? new RedisStore({
-        client: redisClient,
+        sendCommand: (...args: string[]) => redisClient.call(...args),
         prefix: 'rl:api:',
       })
     : undefined,

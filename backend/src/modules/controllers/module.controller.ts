@@ -17,7 +17,6 @@ export class ModuleController {
               id: true,
               title: true,
               type: true,
-              duration: true,
               order: true,
               isFree: true,
               videoUrl: true,
