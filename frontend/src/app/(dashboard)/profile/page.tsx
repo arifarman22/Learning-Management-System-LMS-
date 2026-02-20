@@ -82,7 +82,7 @@ export default function ProfilePage() {
     totalCourses: enrollments?.data?.length || 0,
     completedCourses: enrollments?.data?.filter((e: any) => e.status === 'COMPLETED').length || 0,
     inProgressCourses: enrollments?.data?.filter((e: any) => e.status === 'ACTIVE').length || 0,
-    averageProgress: enrollments?.data?.length > 0 
+    averageProgress: enrollments?.data?.length && enrollments.data.length > 0 
       ? Math.round(enrollments.data.reduce((acc: number, e: any) => acc + (e.progress || 0), 0) / enrollments.data.length)
       : 0,
   };

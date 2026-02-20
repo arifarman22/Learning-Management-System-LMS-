@@ -35,14 +35,14 @@ export default function AnalyticsPage() {
             <div className="h-48 bg-gray-100 animate-pulse rounded" />
           ) : (
             <div className="space-y-2">
-              {data?.enrollmentGrowth.map((item) => (
+              {data?.enrollmentGrowth.map((item: any) => (
                 <div key={item.date} className="flex items-center gap-3">
                   <span className="text-sm text-gray-500 w-24">{item.date}</span>
                   <div className="flex-1 bg-gray-100 rounded-full h-4 relative">
                     <div
                       className="bg-blue-500 h-4 rounded-full"
                       style={{
-                        width: `${Math.min(100, (item.count / Math.max(...(data?.enrollmentGrowth.map(d => d.count) || [1]))) * 100)}%`,
+                        width: `${Math.min(100, (item.count / Math.max(...(data?.enrollmentGrowth.map((d: any) => d.count) || [1]))) * 100)}%`,
                       }}
                     />
                   </div>

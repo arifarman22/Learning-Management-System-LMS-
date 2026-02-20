@@ -82,7 +82,7 @@ export default function EnrollmentsPage() {
                 ))}
               </div>
             </div>
-          ) : enrollments.length > 0 ? (
+          ) : enrollments && enrollments.length > 0 ? (
             <div className="divide-y">
               {enrollments.map((enrollment: any) => (
                 <div key={enrollment.id} className="p-6 hover:bg-gray-50 transition">
