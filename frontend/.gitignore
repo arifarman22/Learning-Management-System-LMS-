@@ -3,6 +3,7 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
 
 # Environment variables
 .env
@@ -10,18 +11,22 @@ yarn-error.log*
 .env.production
 .env.*.local
 
-# Build output
-dist/
+# Next.js
+.next/
+out/
 build/
+dist/
 
-# Logs
-logs/
-*.log
-combined.log
-error.log
+# Testing
+coverage/
+.nyc_output/
+
+# Vercel
+.vercel
 
 # TypeScript
 *.tsbuildinfo
+next-env.d.ts
 
 # IDE
 .vscode/
@@ -34,12 +39,7 @@ error.log
 .DS_Store
 Thumbs.db
 
-# Prisma
-prisma/.env
-
-# Vercel
-.vercel
-
-# Testing
-coverage/
-.nyc_output/
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
